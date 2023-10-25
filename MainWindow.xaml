@@ -1,0 +1,28 @@
+﻿<Window x:Class="PROGPOEPART2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROGPOEPART2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid>
+        <StackPanel x:Name="HomeStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <TextBlock Text="Dewey Decimal Classification System Training" FontSize="20" Margin="0,0,0,20"/>
+            <Button x:Name="btnReplacingBookTask" Content="Replacing Books Task" Click="StartReplacingBooksTask_Click" IsEnabled="True" Width="200" Height="40"/>
+            <Button x:Name="btnIdentifyAreas" Content="Identifying areas" Click="StartIdentifyingTask_Click" IsEnabled="True" Width="200" Height="40" Margin="0,10,0,0" />
+            <Button x:Name="btnFindCallNumbers" Content="Finding Call Numbers (Not Implemented)" Click="StartFindingCallNumbers_Click" IsEnabled="False" Width="200" Height="40" Margin="0,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel x:Name="ReplacingBooks" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+            <Grid Height="363" Width="593">
+                <TextBox x:Name="CallNumberTextBox" IsReadOnly="True" Margin="10,10,313,57" BorderThickness="1,1,1,1"/>
+                <TextBox x:Name="UserOrderTextBox" Width="265" TextWrapping="Wrap" AcceptsReturn="True" HorizontalAlignment="Right" Margin="0,10,10,57"/>
+                <Button x:Name="btnSubmitRB" Content="Submit" Click="SubmitRB_Click" FontSize="20" Width="200" Height="40" Margin="0,300,0,0"/>
+                <Label x:Name="PointsLabelRB" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,325,10,0" FontSize="16"/>
+                <Button Content="Back" x:Name="btnReturn"  FontSize="20" Height="40" Margin="8,310,509,13" Click="BackRB_Click"/>
+                <Button Content="Restart" x:Name="btnRefresh"  FontSize="20" Height="40" Margin="408,310,97,13" Click="RestartRB_Click"/>
+             </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
