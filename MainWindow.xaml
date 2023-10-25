@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600">
     <Grid>
-        <StackPanel x:Name="HomeStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+        <StackPanel x:Name="HomeStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
             <TextBlock Text="Dewey Decimal Classification System Training" FontSize="20" Margin="0,0,0,20"/>
             <Button x:Name="btnReplacingBookTask" Content="Replacing Books Task" Click="StartReplacingBooksTask_Click" IsEnabled="True" Width="200" Height="40"/>
             <Button x:Name="btnIdentifyAreas" Content="Identifying areas" Click="StartIdentifyingTask_Click" IsEnabled="True" Width="200" Height="40" Margin="0,10,0,0" />
-            <Button x:Name="btnFindCallNumbers" Content="Finding Call Numbers (Not Implemented)" Click="StartFindingCallNumbers_Click" IsEnabled="False" Width="200" Height="40" Margin="0,10,0,0"/>
+            <Button x:Name="btnFindCallNumbers" Content="Finding Call Numbers (Not Implemented)" IsEnabled="False" Width="200" Height="40" Margin="0,10,0,0"/>
         </StackPanel>
 
-        <StackPanel x:Name="ReplacingBooks" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+        <StackPanel x:Name="ReplacingBooks" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
             <Grid Height="363" Width="593">
                 <TextBox x:Name="CallNumberTextBox" IsReadOnly="True" Margin="10,10,313,57" BorderThickness="1,1,1,1"/>
                 <TextBox x:Name="UserOrderTextBox" Width="265" TextWrapping="Wrap" AcceptsReturn="True" HorizontalAlignment="Right" Margin="0,10,10,57"/>
@@ -22,7 +22,36 @@
                 <Label x:Name="PointsLabelRB" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,325,10,0" FontSize="16"/>
                 <Button Content="Back" x:Name="btnReturn"  FontSize="20" Height="40" Margin="8,310,509,13" Click="BackRB_Click"/>
                 <Button Content="Restart" x:Name="btnRefresh"  FontSize="20" Height="40" Margin="408,310,97,13" Click="RestartRB_Click"/>
-             </Grid>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel x:Name="IdentifyBooks" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <Grid Height="404" Width="558">
+                <ListBox x:Name="lstQuestions" Width="200" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,50,0,0">
+                    <ListBoxItem>1</ListBoxItem>
+                    <ListBoxItem>2</ListBoxItem>
+                    <ListBoxItem>3</ListBoxItem>
+                    <ListBoxItem>4</ListBoxItem>
+                    <ListBoxItem>5</ListBoxItem>
+                </ListBox>
+
+                <ListBox x:Name="lstAnswers" Width="200" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,50,0">
+                    <ListBoxItem>1</ListBoxItem>
+                    <ListBoxItem>2</ListBoxItem>
+                    <ListBoxItem>3</ListBoxItem>
+                    <ListBoxItem>4</ListBoxItem>
+                    <ListBoxItem>5</ListBoxItem>
+                    <ListBoxItem>6</ListBoxItem>
+                    <ListBoxItem>7</ListBoxItem>
+                </ListBox>
+
+                <Button Content="Up" x:Name="btnUp" Width="40" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16" Click="btnUp_Click"/>
+                <Button Content="Down" x:Name="btnDown" Width="40" Height="40" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,0" FontSize="16" Click="btnDown_Click"/>
+                <Button Content="Submit" x:Name="btnSubmitIA" Width="120" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50" FontSize="16" Click="btnSubmttIA_Click"/>
+                <Label x:Name="PointsLabelIA" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" FontSize="16"/>
+                <Button Content="←" x:Name="btnBackIA" FontSize="20" Height="40" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,0,0,50" Width="40" Click="BackIA_Click"/>
+                <Button Content="↻" x:Name="btnRestartIA" FontSize="20" Height="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,50" Width="40" Click="RestartIA_Click"/>
+            </Grid>
         </StackPanel>
     </Grid>
 </Window>
